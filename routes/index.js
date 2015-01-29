@@ -48,15 +48,14 @@ router.get('/insert/', function(req, res, next) {
 router.get('/view/', function(req, res, next) {
   var result = [];
   pg.connect(DATABASE_URL, function(err, client) {
-      var queryText = "SELECT * FROM example";
-      var query = client.query(queryText);
+      var queryText = "select * from example";
+      //var query = client.query(queryText);
 
-      query.on('row', function(result) {
-          if (!result) {
-            return res.send('No data found');
-          } else {
-            res.send('count: ' + result.count);
-          }
+      client.query('SELECT * FROM example', function(err, result) {
+          //done();
+          if(err) return console.error(err);
+          console.log(result.rows);
+          res.send(result);
       });
   });
 });
