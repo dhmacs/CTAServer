@@ -11,7 +11,7 @@ router.get('/ciao/', function(req, res, next) {
 });
 
 router.get('/jsonp/', function(req, res, next) {
-  res.jsonp({ title: 'boh' });
+  res.jsonp({ title: 'boh2' });
 });
 
 module.exports = router;
