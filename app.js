@@ -63,5 +63,9 @@ app.use(function(req, res, next) {
     next();
 });
 
+app.post('/upload/', function(req, res) {
+    res.send(req.files);
+});
+
 
 module.exports = app;
