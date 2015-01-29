@@ -49,12 +49,14 @@ router.get('/view/', function(req, res, next) {
   var result = [];
   pg.connect(DATABASE_URL, function(err, client) {
       var queryText = "SELECT * FROM example";
-      client.query(queryText, function(err, results) {
-          results.forEach(function(row) {
-            result.push(row);
-          });
+      var query = client.query(queryText);
 
-          res.jsonp(result);
+      query.on('row', function(result) {
+          if (!result) {
+            return res.send('No data found');
+          } else {
+            res.send('count: ' + result.count);
+          }
       });
   });
 });
