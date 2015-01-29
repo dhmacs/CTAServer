@@ -64,7 +64,7 @@ app.use(function(req, res, next) {
 });
 
 app.post('/upload/', function(req, res) {
-    res.send('ok');
+    res.end('ok');
 });
 
 
