@@ -29,14 +29,33 @@ router.get('/create/', function(req, res, next) {
   var result;
   pg.connect(DATABASE_URL, function(err, client) {
     var query = client.query('CREATE TABLE example(greet varchar(255))');
-
-    /*
-    query.on('row', function(row) {
-      console.log(JSON.stringify(row));
-    });*/
   });
 
   res.jsonp({ result: "ok"});
+});
+
+router.get('/insert/', function(req, res, next) {
+  var result;
+  pg.connect(DATABASE_URL, function(err, client) {
+    var queryText = "INSERT INTO example VALUES('CIAO')";
+    var query = client.query(queryText);
+
+  });
+
+  res.jsonp({ result: "ok"});
+});
+
+router.get('/view/', function(req, res, next) {
+  var result = [];
+  pg.connect(DATABASE_URL, function(err, client) {
+      var queryText = "SELECT * FROM example";
+      var query = client.query(queryText);
+      query.on('row', function(row) {
+        result.push(JSON.stringify(row));
+      });
+  });
+
+  res.jsonp({ result: result});
 });
 
 module.exports = router;
