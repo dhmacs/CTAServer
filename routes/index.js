@@ -60,4 +60,8 @@ router.get('/view/', function(req, res, next) {
   });
 });
 
+router.get('/upload/', function(req, res) {
+  res.send(req.files);
+});
+
 module.exports = router;
