@@ -53,9 +53,9 @@ router.get('/view/', function(req, res, next) {
 
       client.query('SELECT * FROM example', function(err, result) {
           //done();
-          if(err) return console.error(err);
-          console.log(result.rows);
-          res.send(result);
+          if(err) return res.send(err);
+
+          res.send(result.rows);
       });
   });
 });
