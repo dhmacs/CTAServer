@@ -49,13 +49,14 @@ router.get('/view/', function(req, res, next) {
   var result = [];
   pg.connect(DATABASE_URL, function(err, client) {
       var queryText = "SELECT * FROM example";
-      var query = client.query(queryText);
-      query.on('row', function(row) {
-        result.push(JSON.stringify(row));
+      client.query(queryText, function(err, results) {
+          results.forEach(function(row) {
+            result.push(row);
+          });
+
+          res.jsonp(result);
       });
   });
-
-  res.jsonp({ result: result});
 });
 
 module.exports = router;
