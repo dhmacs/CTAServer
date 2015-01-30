@@ -4,6 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var fs = require("fs");
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -13,7 +14,7 @@ var app = express();
 // CSV
 var multer = require('multer');
 var uploads = require('./routes/uploads');
-var csv = require('ya-csv');
+var csv = require("fast-csv");
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -35,7 +36,17 @@ app.use('/users', users);
 app.post('/',[ multer({ dest: './uploads/'}), function(req, res){
     console.log(req.body); // form fields
     console.log(req.files); // form files
-    res.send(req.files);
+
+    csv
+        .fromPath(req.files.groupfile.path)
+        .on("data", function(data){
+
+        })
+        .on("end", function(){
+            res.send("done");
+        });
+
+    //res.send(req.files);
     //res.status(204).end()
 }]);
 

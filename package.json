@@ -14,7 +14,7 @@
     "morgan": "~1.5.1",
     "serve-favicon": "~2.2.0",
     "pg": "4.x",
-    "ya-csv" : "0.9.4",
+    "fast-csv" : "0.5.5",
     "multer" : "0.1.7"
   }
 }
