@@ -1,0 +1,10 @@
+//
+   Created by Macs on 1/30/15.
+extends layout
+block content
+h1= title
+form#fileUpload(method="post" action="/uploads" enctype="multipart/form-data")
+   label(for="payload") Select a file to upload:
+   input#payload(type="file" name="myFile")
+   br
+   button#upload Upload
