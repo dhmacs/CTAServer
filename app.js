@@ -34,7 +34,7 @@ app.post('/upload', function(req, res) {
         color = req.body.color;
     */
     //req.form.on('end', function() {
-        res.send(req.files.groupfile.size);
+        res.send(req);
     //)});
 
 });
