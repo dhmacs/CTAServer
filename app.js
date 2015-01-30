@@ -40,7 +40,7 @@ app.post('/',[ multer({ dest: './uploads/'}), function(req, res){
     var content = [];
 
     csv
-        .fromPath(req.files.groupfile.path)
+        .fromPath(req.files.groupfile.path, {headers: true})
         .on("data", function(data){
             content.push(data);
         })
