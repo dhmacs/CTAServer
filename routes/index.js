@@ -8,9 +8,6 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'CTA data feed' });
 });
 
-router.get('/ciao/', function(req, res, next) {
-  res.render('index', { title: 'Ciao' });
-});
 
 router.get('/jsonp/', function(req, res, next) {
   var result;
