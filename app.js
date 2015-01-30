@@ -37,13 +37,16 @@ app.post('/',[ multer({ dest: './uploads/'}), function(req, res){
     console.log(req.body); // form fields
     console.log(req.files); // form files
 
+    var content = [];
+
     csv
         .fromPath(req.files.groupfile.path)
         .on("data", function(data){
-            res.send(data);
+            content.push(data);
         })
         .on("end", function(){
             //res.send("done");
+            res.send(content);
         });
 
     //res.send(req.files);
