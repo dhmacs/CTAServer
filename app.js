@@ -28,10 +28,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/users', users);
 
+/*
 app.configure(function(){
     app.use(express.methodOverride());
     app.use(express.multipart());
-});
+});*/
 
 app.post('/upload', function(req, res) {
     /*
