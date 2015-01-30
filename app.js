@@ -40,7 +40,7 @@ app.post('/routes',[ multer({ dest: './uploads/'}), function(req, res){
     var content = [];
 
     pg.connect(DATABASE_URL, function(err, client) {
-        res.send(req.files.groupfile.path);
+        //res.send(req.files.groupfile.path);
 
         var queryText = "INSERT INTO Routes VALUES($1,$2,$3,$4,$5,$6,$7)";
         var query = client.query(queryText);
