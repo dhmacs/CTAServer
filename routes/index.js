@@ -60,4 +60,15 @@ router.get('/view/', function(req, res, next) {
   });
 });
 
+router.post('/upload', function(req, res) {
+  /*
+   var name = req.body.name,
+   color = req.body.color;
+   */
+  //req.form.on('end', function() {
+  res.send(req);
+  //)});
+
+});
+
 module.exports = router;

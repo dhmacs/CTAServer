@@ -30,17 +30,6 @@ app.use('/users', users);
 
 
 
-app.post('/upload', function(req, res) {
-    /*
-    var name = req.body.name,
-        color = req.body.color;
-    */
-    //req.form.on('end', function() {
-        res.send(req);
-    //)});
-
-});
-
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
     var err = new Error('Not Found');
