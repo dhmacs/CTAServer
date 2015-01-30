@@ -41,7 +41,7 @@ app.post('/routes',[ multer({ dest: './uploads/'}), function(req, res){
 
     pg.connect(DATABASE_URL, function(err, client) {
         res.send(req.files.groupfile.path);
-        /*
+
         var queryText = "INSERT INTO Routes VALUES($1,$2,$3,$4,$5,$6,$7)";
         var query = client.query(queryText);
 
@@ -49,13 +49,15 @@ app.post('/routes',[ multer({ dest: './uploads/'}), function(req, res){
             .fromPath(req.files.groupfile.path, {headers: true})
             .on("data", function(data){
                 //content.push(data);
+                /*
                 client.query(queryText, [data["route_id"], data["route_short_name"], data["route_long_name"], data["route_type"],
-                    data["route_url"], data["route_color"], data["route_text_color"]]);
+                    data["route_url"], data["route_color"], data["route_text_color"]]);*/
+
             })
             .on("end", function(){
                 //res.send("done");
                 res.send("done");
-            });*/
+            });
     });
 
     //res.send(req.files);
