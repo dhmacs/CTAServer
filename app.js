@@ -25,13 +25,15 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(express.methodOverride());
+app.use(express.bodyParser({keepExtensions:true,uploadDir:path.join(__dirname,'/files')}));
+
 app.use('/', routes);
 app.use('/users', users);
 
-app.configure(function(){
-    //app.use(express.methodOverride());
-    //app.use(express.bodyParser({keepExtensions:true,uploadDir:path.join(__dirname,'/files')}));
-});
+
+
+
 
 app.post('/upload', function(req, res) {
     /*
