@@ -30,7 +30,7 @@ app.post('/upload', function(req, res) {
     var name = req.body.name,
         color = req.body.color;
     */
-    res.end('ciao');
+    res.redirect('back');
 });
 
 // catch 404 and forward to error handler
