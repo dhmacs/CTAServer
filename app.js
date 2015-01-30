@@ -33,12 +33,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/users', users);
 
+
+
+
 app.post('/routes',[ multer({ dest: './uploads/'}), function(req, res){
-    console.log(req.body); // form fields
-    console.log(req.files); // form files
-
-    var content = [];
-
     pg.connect(DATABASE_URL, function(err, client) {
 
         var queryText = "INSERT INTO Routes VALUES($1,$2,$3,$4,$5,$6,$7)";
@@ -46,8 +44,6 @@ app.post('/routes',[ multer({ dest: './uploads/'}), function(req, res){
         csv
             .fromPath(req.files.groupfile.path, {headers: true})
             .on("data", function(data){
-                //content.push(data);
-
                 client.query(queryText, [data["route_id"], data["route_short_name"], data["route_long_name"], data["route_type"],
                     data["route_url"], data["route_color"], data["route_text_color"]]);
 
@@ -56,10 +52,27 @@ app.post('/routes',[ multer({ dest: './uploads/'}), function(req, res){
                 res.send("done");
             });
     });
-
-    //res.send(req.files);
-    //res.status(204).end()
 }]);
+
+app.post('/shapes',[ multer({ dest: './uploads/'}), function(req, res){
+    pg.connect(DATABASE_URL, function(err, client) {
+
+        var queryText = "INSERT INTO Shapes VALUES($1,$2,$3,$4,$5)";
+
+        csv
+            .fromPath(req.files.groupfile.path, {headers: true})
+            .on("data", function(data){
+                client.query(queryText, [data["shape_id"], data["shape_pt_lat"], data["shape_pt_lon"], data["shape_pt_sequence"],
+                    data["shape_dist_traveled"]]);
+
+            })
+            .on("end", function(){
+                res.send("done");
+            });
+    });
+}]);
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
