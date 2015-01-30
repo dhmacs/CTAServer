@@ -13,7 +13,6 @@ var app = express();
 
 // CSV
 var multer = require('multer');
-var uploads = require('./routes/uploads');
 var csv = require("fast-csv");
 
 // view engine setup
@@ -31,7 +30,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
-//app.use("/uploads", uploads);
 
 app.post('/',[ multer({ dest: './uploads/'}), function(req, res){
     console.log(req.body); // form fields
