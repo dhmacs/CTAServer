@@ -9,7 +9,7 @@ var util = require("util");
 var fs = require("fs");
 
 router.get('/', function(req, res) {
-    res.render("uploadPage", {title: "I love CTA!"});
+    res.render("uploadPage", {title: "I CTA!"});
 });
 
 router.post("/upload", function(req, res, next){
