@@ -35,7 +35,7 @@ app.use('/users', users);
 app.post('/',[ multer({ dest: './uploads/'}), function(req, res){
     console.log(req.body); // form fields
     console.log(req.files); // form files
-    res.redirect("www.google.com");
+    res.redirect("http://www.google.com");
     //res.status(204).end()
 }]);
 
