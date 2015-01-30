@@ -9,10 +9,10 @@ var util = require("util");
 var fs = require("fs");
 
 router.get('/', function(req, res) {
-    res.render("uploadPage", {title: "I CTA!"});
+    res.render("uploadPage", {title: "I m CTA!"});
 });
 
-router.post("/upload", function(req, res, next){
+router.post("/uploads", function(req, res, next){
     /*
     if (req.files) {
         console.log(util.inspect(req.files));
