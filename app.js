@@ -40,10 +40,10 @@ app.post('/',[ multer({ dest: './uploads/'}), function(req, res){
     csv
         .fromPath(req.files.groupfile.path)
         .on("data", function(data){
-
+            res.send(data);
         })
         .on("end", function(){
-            res.send("done");
+            //res.send("done");
         });
 
     //res.send(req.files);
