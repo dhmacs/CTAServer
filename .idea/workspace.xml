@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6bf76253-65c8-447d-bbe2-30a751172647" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/uploadPage.jade" afterPath="$PROJECT_DIR$/views/uploadPage.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/uploads.js" afterPath="$PROJECT_DIR$/routes/uploads.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="CTAServer.iws" />
@@ -37,21 +37,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="uploadPage.jade" pinned="false" current-in-tab="true">
+      <file leaf-file-name="uploadPage.jade" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/uploadPage.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0996016" vertical-offset="0" max-vertical-offset="753">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="240">
               <caret line="5" column="48" selection-start-line="5" selection-start-column="48" selection-end-line="5" selection-end-column="48" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="uploads.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="uploads.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/uploads.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="495">
-              <caret line="29" column="24" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
+            <state vertical-scroll-proportion="0.5179283" vertical-offset="0" max-vertical-offset="753">
+              <caret line="29" column="17" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
               <folding>
                 <element signature="e#0#57#0" expanded="false" />
               </folding>
@@ -103,6 +103,7 @@
         <option value="$PROJECT_DIR$/routes/upload.js" />
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/views/uploadPage.jade" />
+        <option value="$PROJECT_DIR$/routes/uploads.js" />
       </list>
     </option>
   </component>
@@ -487,7 +488,13 @@
       <option name="project" value="LOCAL" />
       <updated>1422634405054</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="configuring">
+      <created>1422634566038</created>
+      <option name="number" value="00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1422634566038</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -586,21 +593,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/uploads.js">
+    <entry file="file://$PROJECT_DIR$/views/uploadPage.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="495">
-          <caret line="29" column="24" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#57#0" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="240">
+          <caret line="5" column="48" selection-start-line="5" selection-start-column="48" selection-end-line="5" selection-end-column="48" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/uploadPage.jade">
+    <entry file="file://$PROJECT_DIR$/routes/uploads.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0996016" vertical-offset="0" max-vertical-offset="753">
-          <caret line="5" column="48" selection-start-line="5" selection-start-column="48" selection-end-line="5" selection-end-column="48" />
-          <folding />
+        <state vertical-scroll-proportion="0.5179283" vertical-offset="0" max-vertical-offset="753">
+          <caret line="29" column="17" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#57#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

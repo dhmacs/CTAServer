@@ -13,6 +13,7 @@ router.get('/', function(req, res) {
 });
 
 router.post("/upload", function(req, res, next){
+    /*
     if (req.files) {
         console.log(util.inspect(req.files));
         if (req.files.myFile.size === 0) {
@@ -25,6 +26,7 @@ router.post("/upload", function(req, res, next){
                 res.end("Well, there is no magic for those who don’t believe in it!");
             }
         });
-    }
+    }*/
+    res.send("top");
 });
 module.exports = router;
