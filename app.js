@@ -43,7 +43,7 @@ app.post('/routes',[ multer({ dest: './uploads/'}), function(req, res){
         //res.send(req.files.groupfile.path);
 
         var queryText = "INSERT INTO Routes VALUES($1,$2,$3,$4,$5,$6,$7)";
-        var query = client.query(queryText);
+        //var query = client.query(queryText);
 
         csv
             .fromPath(req.files.groupfile.path, {headers: true})
