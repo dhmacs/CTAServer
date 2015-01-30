@@ -5,7 +5,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'CTA data feed 2' });
+  res.render('index', { title: 'CTA data feed' });
 });
 
 router.get('/ciao/', function(req, res, next) {

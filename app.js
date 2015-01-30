@@ -56,16 +56,6 @@ app.post('/routes',[ multer({ dest: './uploads/'}), function(req, res){
             });
     });
 
-    csv
-        .fromPath(req.files.groupfile.path, {headers: true})
-        .on("data", function(data){
-            content.push(data);
-        })
-        .on("end", function(){
-            //res.send("done");
-            res.send(content);
-        });
-
     //res.send(req.files);
     //res.status(204).end()
 }]);
