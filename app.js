@@ -5,6 +5,8 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var fs = require("fs");
+var pg = require('pg');
+var DATABASE_URL = 'postgres://mzbciewxfguoad:XwdC3c96EQvT9kEksokj1JDvn8@ec2-184-73-165-193.compute-1.amazonaws.com:5432/df78k0v3mkb016';
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -36,6 +38,23 @@ app.post('/routes',[ multer({ dest: './uploads/'}), function(req, res){
     console.log(req.files); // form files
 
     var content = [];
+
+    pg.connect(DATABASE_URL, function(err, client) {
+        var queryText = "INSERT INTO Routes VALUES($1,$2,$3,$4,$5,$6,$7)";
+        var query = client.query(queryText);
+
+        csv
+            .fromPath(req.files.groupfile.path, {headers: true})
+            .on("data", function(data){
+                //content.push(data);
+                client.query(queryText, [data["route_id"], data["route_short_name"], data["route_long_name"], data["route_type"],
+                    data["route_url"], data["route_color"], data["route_text_color"]]);
+            })
+            .on("end", function(){
+                //res.send("done");
+                res.send("done");
+            });
+    });
 
     csv
         .fromPath(req.files.groupfile.path, {headers: true})
