@@ -10,6 +10,9 @@ var users = require('./routes/users');
 
 var app = express();
 
+// CSV
+var csv = require('ya-csv');
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -30,9 +33,9 @@ app.post('/upload', function(req, res) {
     var name = req.body.name,
         color = req.body.color;
     */
-    req.form.on('end', function() {
-        res.send(req.files);
-    });
+    //req.form.on('end', function() {
+        res.send(req.files.groupfile.size);
+    //)});
 
 });
 
