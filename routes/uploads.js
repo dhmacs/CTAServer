@@ -12,7 +12,7 @@ router.get('/', function(req, res) {
     res.render("uploadPage", {title: "I m CTA!"});
 });
 
-router.post("/uploads", function(req, res, next){
+router.post("/", function(req, res, next){
     /*
     if (req.files) {
         console.log(util.inspect(req.files));
