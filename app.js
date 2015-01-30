@@ -40,6 +40,8 @@ app.post('/routes',[ multer({ dest: './uploads/'}), function(req, res){
     var content = [];
 
     pg.connect(DATABASE_URL, function(err, client) {
+        res.send('done');
+        /*
         var queryText = "INSERT INTO Routes VALUES($1,$2,$3,$4,$5,$6,$7)";
         var query = client.query(queryText);
 
@@ -53,7 +55,7 @@ app.post('/routes',[ multer({ dest: './uploads/'}), function(req, res){
             .on("end", function(){
                 //res.send("done");
                 res.send("done");
-            });
+            });*/
     });
 
     //res.send(req.files);
