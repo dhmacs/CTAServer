@@ -75,13 +75,13 @@ app.post('/shapes',[ multer({ dest: './uploads/'}), function(req, res){
 app.post('/stops',[ multer({ dest: './uploads/'}), function(req, res){
     pg.connect(DATABASE_URL, function(err, client) {
 
-        var queryText = "INSERT INTO Stops VALUES($1,$2,$3,$4,$5,$6,$7,$8,$9)";
+        var queryText = "INSERT INTO Stops VALUES($1,$2,$3,$4,$5,$6,$7)";
 
         csv
             .fromPath(req.files.stops.path, {headers: true})
             .on("data", function(data){
                 client.query(queryText, [data["stop_id"], data["stop_code"], data["stop_name"], data["stop_desc"],
-                    data["stop_lat"], data["stop_lon"], data["location_type"], data["parent_station"], data["wheelchair_boarding"]]);
+                    data["stop_lat"], data["stop_lon"], data["location_type"]]);
 
             })
             .on("end", function(){
