@@ -75,7 +75,7 @@ app.post('/shapes',[ multer({ dest: './uploads/'}), function(req, res){
 app.post('/stops',[ multer({ dest: './uploads/'}), function(req, res){
     pg.connect(DATABASE_URL, function(err, client) {
 
-        var queryText = "INSERT INTO Shapes VALUES($1,$2,$3,$4,$5,$6,$7,$8,$9)";
+        var queryText = "INSERT INTO Stops VALUES($1,$2,$3,$4,$5,$6,$7,$8,$9)";
 
         csv
             .fromPath(req.files.stops.path, {headers: true})
