@@ -35,9 +35,10 @@ app.use('/', routes);
 app.use('/users', users);
 
 
-var getRawBody = require('raw-body');
-var typer      = require('media-typer');
+//var getRawBody = require('raw-body');
+//var typer      = require('media-typer');
 
+/*
 app.use(function (req, res, next) {
     getRawBody(req, {
         length: req.headers['content-length'],
@@ -50,7 +51,7 @@ app.use(function (req, res, next) {
         req.text = string;
         next()
     })
-});
+});*/
 
 
 app.post('/routes',[ multer({ dest: './uploads/'}), function(req, res){
