@@ -81,7 +81,7 @@ app.post('/shapes',[ multer({ dest: './uploads/'}), function(req, res){
         csv
             .fromPath(req.files.shapes.path, {headers: true})
             .on("data", function(data){
-                if(parseInt(data["shape_id"]) >= 4451238 && parseInt(data["shape_id"]) <= 4451239) {
+                if(data["shape_pt_lat"] == '' || data["shape_pt_lon"] == '') {
                     console.log(data);
                 }
 
