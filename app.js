@@ -59,9 +59,9 @@ app.post('/shapes',[ multer({ dest: './uploads/'}), function(req, res){
 
         var queryText = "INSERT INTO Shapes VALUES($1,$2,$3,$4,$5)";
 
-        /*
+
         csv
-            .fromPath(req.files.groupfile.path, {headers: true})
+            .fromPath(req.files.shapes.path, {headers: true})
             .on("data", function(data){
                 client.query(queryText, [data["shape_id"], data["shape_pt_lat"], data["shape_pt_lon"], data["shape_pt_sequence"],
                     data["shape_dist_traveled"]]);
@@ -69,8 +69,7 @@ app.post('/shapes',[ multer({ dest: './uploads/'}), function(req, res){
             })
             .on("end", function(){
                 res.send("done");
-            });*/
-        res.send("top");
+            });
     });
 }]);
 

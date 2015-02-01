@@ -30,9 +30,14 @@
       <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7808765" vertical-offset="492" max-vertical-offset="1860">
-              <caret line="72" column="21" selection-start-line="72" selection-start-column="21" selection-end-line="72" selection-end-column="21" />
-              <folding />
+            <state vertical-scroll-proportion="0.561753" vertical-offset="492" max-vertical-offset="1845">
+              <caret line="61" column="8" selection-start-line="61" selection-start-column="8" selection-end-line="61" selection-end-column="8" />
+              <folding>
+                <marker date="1422769022000" expanded="true" signature="1739:1914" placeholder="[...]" />
+                <marker date="1422769022000" expanded="true" signature="1790:1914" placeholder="{...}" />
+                <marker date="1422769022000" expanded="true" signature="1843:1914" placeholder="{...}" />
+                <marker date="1422769022000" expanded="true" signature="1924:3263" placeholder="/*...*/" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -257,12 +262,6 @@
       <created>1422475475876</created>
       <option name="number" value="Default" />
       <updated>1422475475876</updated>
-    </task>
-    <task id="LOCAL-00013" summary="configuring">
-      <created>1422570227462</created>
-      <option name="number" value="00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1422570227462</updated>
     </task>
     <task id="LOCAL-00014" summary="configuring">
       <created>1422570333058</created>
@@ -552,7 +551,13 @@
       <option name="project" value="LOCAL" />
       <updated>1422768693086</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="configuring">
+      <created>1422768993511</created>
+      <option name="number" value="00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1422768993511</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -645,9 +650,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7808765" vertical-offset="492" max-vertical-offset="1860">
-          <caret line="72" column="21" selection-start-line="72" selection-start-column="21" selection-end-line="72" selection-end-column="21" />
-          <folding />
+        <state vertical-scroll-proportion="0.561753" vertical-offset="492" max-vertical-offset="1845">
+          <caret line="61" column="8" selection-start-line="61" selection-start-column="8" selection-end-line="61" selection-end-column="8" />
+          <folding>
+            <marker date="1422769022000" expanded="true" signature="1739:1914" placeholder="[...]" />
+            <marker date="1422769022000" expanded="true" signature="1790:1914" placeholder="{...}" />
+            <marker date="1422769022000" expanded="true" signature="1843:1914" placeholder="{...}" />
+            <marker date="1422769022000" expanded="true" signature="1924:3263" placeholder="/*...*/" />
+          </folding>
         </state>
       </provider>
     </entry>
