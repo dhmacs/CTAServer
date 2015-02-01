@@ -17,9 +17,6 @@ var app = express();
 var multer = require('multer');
 var csv = require("fast-csv");
 
-var getRawBody = require('raw-body');
-var typer      = require('media-typer');
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -36,21 +33,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
-
-
-app.use(function (req, res, next) {
-    getRawBody(req, {
-        length: req.headers['content-length'],
-        limit: '200mb',
-        encoding: typer.parse(req.headers['content-type']).parameters.charset
-    }, function (err, string) {
-        if (err)
-            return next(err);
-
-        req.text = string;
-        next()
-    })
-});
 
 
 app.post('/routes',[ multer({ dest: './uploads/'}), function(req, res){
@@ -82,6 +64,24 @@ app.post('/shapes',[ multer({ dest: './uploads/'}), function(req, res){
             .on("data", function(data){
                 client.query(queryText, [data["shape_id"], data["shape_pt_lat"], data["shape_pt_lon"], data["shape_pt_sequence"],
                     data["shape_dist_traveled"]]);
+
+            })
+            .on("end", function(){
+                res.send("done");
+            });
+    });
+}]);
+
+app.post('/stops',[ multer({ dest: './uploads/'}), function(req, res){
+    pg.connect(DATABASE_URL, function(err, client) {
+
+        var queryText = "INSERT INTO Shapes VALUES($1,$2,$3,$4,$5,$6,$7,$8,$9)";
+
+        csv
+            .fromPath(req.files.stops.path, {headers: true})
+            .on("data", function(data){
+                client.query(queryText, [data["stop_id"], data["stop_code"], data["stop_name"], data["stop_desc"],
+                    data["stop_lat"], data["stop_lon"], data["location_type"], data["parent_station"], data["wheelchair_boarding"]]);
 
             })
             .on("end", function(){
