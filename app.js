@@ -35,6 +35,24 @@ app.use('/', routes);
 app.use('/users', users);
 
 
+var getRawBody = require('raw-body');
+var typer      = require('media-typer');
+
+app.use(function (req, res, next) {
+    getRawBody(req, {
+        length: req.headers['content-length'],
+        limit: '20mb',
+        encoding: typer.parse(req.headers['content-type']).parameters.charset
+    }, function (err, string) {
+        if (err)
+            return next(err);
+
+        req.text = string;
+        next()
+    })
+});
+
+
 app.post('/routes',[ multer({ dest: './uploads/'}), function(req, res){
     pg.connect(DATABASE_URL, function(err, client) {
 
