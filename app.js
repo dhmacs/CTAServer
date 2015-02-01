@@ -17,6 +17,9 @@ var app = express();
 var multer = require('multer');
 var csv = require("fast-csv");
 
+var getRawBody = require('raw-body');
+var typer      = require('media-typer');
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -29,11 +32,25 @@ app.use(bodyParser.urlencoded({ extended: false }));
 //app.use(multer({ dest: "./uploads/"}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+//app.use(express.limit('200mb'));
 
 app.use('/', routes);
 app.use('/users', users);
 
 
+app.use(function (req, res, next) {
+    getRawBody(req, {
+        length: req.headers['content-length'],
+        limit: '200mb',
+        encoding: typer.parse(req.headers['content-type']).parameters.charset
+    }, function (err, string) {
+        if (err)
+            return next(err);
+
+        req.text = string;
+        next()
+    })
+});
 
 
 app.post('/routes',[ multer({ dest: './uploads/'}), function(req, res){
