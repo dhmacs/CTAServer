@@ -62,6 +62,7 @@ app.post('/routes',[ multer({ dest: './uploads/'}), function(req, res){
         csv
             .fromPath(req.files.routes.path, {headers: true})
             .on("data", function(data){
+                console.log(data);
                 client.query(queryText, [data["route_id"], data["route_short_name"], data["route_long_name"], data["route_type"],
                     data["route_url"], data["route_color"], data["route_text_color"]]);
 
