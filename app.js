@@ -82,7 +82,6 @@ app.post('/stops',[ multer({ dest: './uploads/'}), function(req, res){
             .on("data", function(data){
                 client.query(queryText, [data["stop_id"], data["stop_code"], data["stop_name"], data["stop_desc"],
                     data["stop_lat"], data["stop_lon"], data["location_type"]]);
-
             })
             .on("end", function(){
                 res.send("done");
