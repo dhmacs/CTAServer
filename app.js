@@ -83,11 +83,10 @@ app.post('/shapes',[ multer({ dest: './uploads/'}), function(req, res){
             .on("data", function(data){
                 if(data["shape_pt_lat"] == '' || data["shape_pt_lon"] == '') {
                     console.log(data);
+                } else {
+                    client.query(queryText, [data["shape_id"], data["shape_pt_lat"], data["shape_pt_lon"], data["shape_pt_sequence"],
+                        data["shape_dist_traveled"]]);
                 }
-
-                client.query(queryText, [data["shape_id"], data["shape_pt_lat"], data["shape_pt_lon"], data["shape_pt_sequence"],
-                    data["shape_dist_traveled"]]);
-
             })
             .on("end", function(){
                 res.send("done");
