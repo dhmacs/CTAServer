@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6bf76253-65c8-447d-bbe2-30a751172647" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/index.jade" afterPath="$PROJECT_DIR$/views/index.jade" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="CTAServer.iws" />
@@ -30,14 +31,9 @@
       <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.561753" vertical-offset="492" max-vertical-offset="1845">
-              <caret line="61" column="8" selection-start-line="61" selection-start-column="8" selection-end-line="61" selection-end-column="8" />
-              <folding>
-                <marker date="1422769022000" expanded="true" signature="1739:1914" placeholder="[...]" />
-                <marker date="1422769022000" expanded="true" signature="1790:1914" placeholder="{...}" />
-                <marker date="1422769022000" expanded="true" signature="1843:1914" placeholder="{...}" />
-                <marker date="1422769022000" expanded="true" signature="1924:3263" placeholder="/*...*/" />
-              </folding>
+            <state vertical-scroll-proportion="0.16334662" vertical-offset="537" max-vertical-offset="1845">
+              <caret line="44" column="38" selection-start-line="44" selection-start-column="38" selection-end-line="44" selection-end-column="38" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -46,7 +42,7 @@
         <entry file="file://$PROJECT_DIR$/views/index.jade">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270">
-              <caret line="11" column="35" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
+              <caret line="7" column="35" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -262,12 +258,6 @@
       <created>1422475475876</created>
       <option name="number" value="Default" />
       <updated>1422475475876</updated>
-    </task>
-    <task id="LOCAL-00014" summary="configuring">
-      <created>1422570333058</created>
-      <option name="number" value="00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1422570333058</updated>
     </task>
     <task id="LOCAL-00015" summary="configuring">
       <created>1422582535772</created>
@@ -557,7 +547,13 @@
       <option name="project" value="LOCAL" />
       <updated>1422768993511</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="configuring">
+      <created>1422769029823</created>
+      <option name="number" value="00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1422769029823</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -643,21 +639,16 @@
     <entry file="file://$PROJECT_DIR$/views/index.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270">
-          <caret line="11" column="35" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
+          <caret line="7" column="35" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.561753" vertical-offset="492" max-vertical-offset="1845">
-          <caret line="61" column="8" selection-start-line="61" selection-start-column="8" selection-end-line="61" selection-end-column="8" />
-          <folding>
-            <marker date="1422769022000" expanded="true" signature="1739:1914" placeholder="[...]" />
-            <marker date="1422769022000" expanded="true" signature="1790:1914" placeholder="{...}" />
-            <marker date="1422769022000" expanded="true" signature="1843:1914" placeholder="{...}" />
-            <marker date="1422769022000" expanded="true" signature="1924:3263" placeholder="/*...*/" />
-          </folding>
+        <state vertical-scroll-proportion="0.16334662" vertical-offset="537" max-vertical-offset="1845">
+          <caret line="44" column="38" selection-start-line="44" selection-start-column="38" selection-end-line="44" selection-end-column="38" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -42,7 +42,7 @@ app.post('/routes',[ multer({ dest: './uploads/'}), function(req, res){
         var queryText = "INSERT INTO Routes VALUES($1,$2,$3,$4,$5,$6,$7)";
 
         csv
-            .fromPath(req.files.shapes.path, {headers: true})
+            .fromPath(req.files.routes.path, {headers: true})
             .on("data", function(data){
                 client.query(queryText, [data["route_id"], data["route_short_name"], data["route_long_name"], data["route_type"],
                     data["route_url"], data["route_color"], data["route_text_color"]]);
