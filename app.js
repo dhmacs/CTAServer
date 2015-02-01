@@ -81,7 +81,10 @@ app.post('/shapes',[ multer({ dest: './uploads/'}), function(req, res){
         csv
             .fromPath(req.files.shapes.path, {headers: true})
             .on("data", function(data){
-                console.log(data);
+                if(parseInt(data["shape_id"]) >= 4451238) {
+                    console.log(data);
+                }
+
                 client.query(queryText, [data["shape_id"], data["shape_pt_lat"], data["shape_pt_lon"], data["shape_pt_sequence"],
                     data["shape_dist_traveled"]]);
 
