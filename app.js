@@ -40,7 +40,7 @@ app.post('/routes',[ multer({ dest: './uploads/'}), function(req, res){
     pg.connect(DATABASE_URL, function(err, client) {
 
         var queryText = "INSERT INTO Routes VALUES($1,$2,$3,$4,$5,$6,$7)";
-        /*
+
         csv
             .fromPath(req.files.shapes.path, {headers: true})
             .on("data", function(data){
@@ -50,10 +50,8 @@ app.post('/routes',[ multer({ dest: './uploads/'}), function(req, res){
             })
             .on("end", function(){
                 res.send("done");
-            });*/
+            });
     });
-
-    res.send("top");
 }]);
 
 app.post('/shapes',[ multer({ dest: './uploads/'}), function(req, res){
@@ -61,6 +59,7 @@ app.post('/shapes',[ multer({ dest: './uploads/'}), function(req, res){
 
         var queryText = "INSERT INTO Shapes VALUES($1,$2,$3,$4,$5)";
 
+        /*
         csv
             .fromPath(req.files.groupfile.path, {headers: true})
             .on("data", function(data){
@@ -70,7 +69,8 @@ app.post('/shapes',[ multer({ dest: './uploads/'}), function(req, res){
             })
             .on("end", function(){
                 res.send("done");
-            });
+            });*/
+        res.send("top");
     });
 }]);
 
