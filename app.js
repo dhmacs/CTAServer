@@ -111,6 +111,24 @@ app.post('/stops',[ multer({ dest: './uploads/'}), function(req, res){
     });
 }]);
 
+app.post('/calendar',[ multer({ dest: './uploads/'}), function(req, res){
+    pg.connect(DATABASE_URL, function(err, client) {
+
+        var queryText = "INSERT INTO Calendar VALUES($1,$2,$3,$4,$5,$6,$7,$8,$9,$10)";
+
+        csv
+            .fromPath(req.files.calendar.path, {headers: true})
+            .on("data", function(data){
+                client.query(queryText, [data["service_id"], data["monday"], data["tuesday"], data["wednesday"],
+                    data["thursday"], data["friday"], data["saturday"], data["sunday"], data["start_date"]
+                    , data["end_date"]]);
+            })
+            .on("end", function(){
+                res.send("done");
+            });
+    });
+}]);
+
 
 
 // catch 404 and forward to error handler
