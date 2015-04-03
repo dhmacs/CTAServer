@@ -58,6 +58,51 @@ app.get('/api/stops/', function(req,res) {
 });
 
 
+
+
+
+
+
+
+
+
+var loadStops = function() {
+    var graph = app.locals.ctaGraph;
+    csv
+        .fromPath("data/stops.csv", {headers: true})
+        .on("data", function(row){
+            graph.addNode(row["stop_id"], {
+                stopName: row["stop_name"],
+                stopDescription: row["stop_desc"],
+                stopLatitude: parseFloat(row["stop_lat"]),
+                stopLongitude: parseFloat(row["stop_lon"])
+            });
+        })
+        .on("end", function(){
+            console.log("done stops.csv");
+        });
+};
+
+var loadData = function() {
+    app.locals.ctaGraph = ds.Graph();
+    app.locals.trips = {};
+    app.locals.routes = {};
+    loadStops();
+    //loadStopTimes();
+    //loadRoutes();
+} ();
+
+app.use(function(req, res, next) {
+    res.header('Access-Control-Allow-Origin', '*');
+    next();
+});
+/*****************************************************************/
+/*****************************************************************/
+/************************    OLD    ******************************/
+/*****************************************************************/
+/*****************************************************************/
+
+/*
 app.post('/routes',[ multer({ dest: './uploads/'}), function(req, res){
     pg.connect(DATABASE_URL, function(err, client) {
 
@@ -172,6 +217,7 @@ app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
 });
+*/
 
 
 module.exports = app;
