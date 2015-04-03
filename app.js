@@ -53,6 +53,10 @@ app.use(function (req, res, next) {
     })
 });*/
 
+app.get('/api/stops/', function(req,res) {
+    res.send({result: "positive"});
+});
+
 
 app.post('/routes',[ multer({ dest: './uploads/'}), function(req, res){
     pg.connect(DATABASE_URL, function(err, client) {
