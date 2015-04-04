@@ -89,7 +89,7 @@ var loadData = function() {
     app.locals.ctaGraph = ds.Graph();
     app.locals.trips = {};
     app.locals.routes = {};
-    loadStops();
+    //loadStops();
     //loadStopTimes();
     //loadRoutes();
 } ();
